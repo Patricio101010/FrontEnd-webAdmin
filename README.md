@@ -4,79 +4,61 @@ Aplicación web para la gestión de finanzas personales e inversiones, construid
 
 ---
 
-## Tecnologías
+## 🚀 Tecnologías
 
-- **Frontend:**  
-  React 19 + TypeScript + Vite + TailwindCSS (Atomic Design)  
-- **Backend:**  
-  Python (FastAPI o Flask) + Zod para validación  
-- **Estado global:**  
-  Zustand  
-- **Formularios:**  
-  React Hook Form + Zod  
-- **Enrutamiento:**  
-  React Router DOM v7  
-- **Testing:**  
-  Vitest + React Testing Library  
+**Frontend:**
+- React 19 + TypeScript
+- Vite
+- TailwindCSS (Atomic Design)
+
+**Backend:**
+- Python (FastAPI o Flask)
+- Zod para validación
+
+**Otras tecnologías:**
+- Zustand (Estado global)
+- React Hook Form + Zod (Formularios)
+- React Router DOM v7 (Enrutamiento)
+- Vitest + React Testing Library (Testing)
 
 ---
 
-## Estructura del Proyecto
+## 🧱 Estructura del Proyecto
 
 ### Frontend (`frontend/`)
+
+```plaintext
 src/
-├── components/ # Componentes organizados por Atomic Design
-│ ├── atoms/ # Componentes básicos (botones, inputs, íconos)
-│ ├── molecules/ # Combinaciones simples de átomos (ej. SearchBar)
-│ ├── particles/ # Elementos dinámicos o abstractos (ej. Skeleton)
-│ ├── organisms/ # Componentes complejos con estado (ej. Navbar)
-│ └── templates/ # Layouts reutilizables (ej. Dashboard, Auth)
-├── pages/ # Vistas y rutas (ej. Home, Login, Transactions)
-├── store/ # Estado global con Zustand
-├── hooks/ # Hooks personalizados (ej. useAuth, useFetch)
-├── utils/ # Funciones auxiliares (formatos, fechas)
-├── types/ # Definición de tipos TypeScript
-├── api/ # Cliente HTTP con axios y servicios
-├── App.tsx # Router principal
-└── main.tsx # Punto de entrada React
+├── components/              # Componentes organizados por Atomic Design
+│   ├── atoms/               # Botones, inputs, íconos
+│   ├── molecules/           # Combinaciones simples de átomos (ej. SearchBar)
+│   ├── particles/           # Elementos dinámicos/abstractos (ej. Skeleton)
+│   ├── organisms/           # Componentes con lógica y estado (ej. Navbar)
+│   └── templates/           # Layouts reutilizables (ej. Dashboard, Auth)
+├── pages/                   # Vistas y rutas (Home, Login, Transactions)
+├── store/                   # Zustand para estado global
+├── hooks/                   # Hooks personalizados (useAuth, useFetch)
+├── utils/                   # Funciones auxiliares (formatos, fechas)
+├── types/                   # Tipos TypeScript
+├── api/                     # Cliente HTTP con axios y endpoints
+├── App.tsx                  # Configuración de rutas
+└── main.tsx                 # Entrada principal de la app
+```
+### Frontend (`frontend/`)
 
-### Backend (`backend/`)
-pp/
-├── models/ # Modelos de datos (ORM o clases)
-├── routes/ # Endpoints y rutas HTTP
-├── services/ # Lógica de negocio y operaciones
-└── schemas/ # Validaciones y serialización (p.ej. Pydantic)
+```plaintext
+app/
+├── models/                  # Modelos de datos (ORM o clases)
+├── routes/                  # Endpoints y rutas HTTP
+├── services/                # Lógica de negocio
+└── schemas/                 # Validaciones (Pydantic o similar)
 
-tests/ # Pruebas unitarias e integración
-requirements.txt # Dependencias del proyecto
-main.py # Entrada principal de la aplicación
+tests/                       # Pruebas unitarias e integración
+requirements.txt             # Dependencias del proyecto
+main.py                      # Punto de entrada de la API
+```
 
----
-
-## Instalación
-
-### Requisitos previos
-
-- Node.js (v18+ recomendada)
-- Python 3.10+
-- Pip
-- PostgreSQL (opcional para backend)
-
----
-
-### Frontend
-
-cd frontend
-npm install
-npm run dev
-Abre http://localhost:5173 en tu navegador.
-
-### Frontend
-
-cd backend
-python -m venv venv
-source venv/bin/activate     # Linux / macOS
-venv\Scripts\activate        # Windows
-pip install -r requirements.txt
-uvicorn main:app --reload
-
+🛠️ Instalación
+Requisitos previos
+Node.js (v18+ recomendada)
+Python 3.10+
