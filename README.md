@@ -1,64 +1,36 @@
-# Finanza-web-app
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Aplicación web para la gestión de finanzas personales e inversiones, construida con tecnologías modernas para ofrecer una experiencia fluida y escalable.
+## Getting Started
 
----
+First, run the development server:
 
-## 🚀 Tecnologías
-
-**Frontend:**
-- React 19 + TypeScript
-- Vite
-- TailwindCSS (Atomic Design)
-
-**Backend:**
-- Python (FastAPI o Flask)
-- Zod para validación
-
-**Otras tecnologías:**
-- Zustand (Estado global)
-- React Hook Form + Zod (Formularios)
-- React Router DOM v7 (Enrutamiento)
-- Vitest + React Testing Library (Testing)
-
----
-
-## 🧱 Estructura del Proyecto
-
-### Frontend (`frontend/`)
-
-```plaintext
-src/
-├── components/              # Componentes organizados por Atomic Design
-│   ├── atoms/               # Botones, inputs, íconos
-│   ├── molecules/           # Combinaciones simples de átomos (ej. SearchBar)
-│   ├── particles/           # Elementos dinámicos/abstractos (ej. Skeleton)
-│   ├── organisms/           # Componentes con lógica y estado (ej. Navbar)
-│   └── templates/           # Layouts reutilizables (ej. Dashboard, Auth)
-├── pages/                   # Vistas y rutas (Home, Login, Transactions)
-├── store/                   # Zustand para estado global
-├── hooks/                   # Hooks personalizados (useAuth, useFetch)
-├── utils/                   # Funciones auxiliares (formatos, fechas)
-├── types/                   # Tipos TypeScript
-├── api/                     # Cliente HTTP con axios y endpoints
-├── App.tsx                  # Configuración de rutas
-└── main.tsx                 # Entrada principal de la app
-```
-### Frontend (`frontend/`)
-
-```plaintext
-app/
-├── models/                  # Modelos de datos (ORM o clases)
-├── routes/                  # Endpoints y rutas HTTP
-├── services/                # Lógica de negocio
-└── schemas/                 # Validaciones (Pydantic o similar)
-
-tests/                       # Pruebas unitarias e integración
-requirements.txt             # Dependencias del proyecto
-main.py                      # Punto de entrada de la API
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-🛠️ Instalación
-Requisitos previos
-Node.js (v18+ recomendada)
-Python 3.10+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

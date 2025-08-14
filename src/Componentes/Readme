@@ -1,0 +1,124 @@
+# 🧪 Sistema de Diseño Atómico (Extendido)
+
+Estructura React basada en **Atomic Design** con un nivel adicional de **Partículas** entre Moléculas y Organismos. Ideal para proyectos escalables.
+
+## 🏗️ Estructura de Archivos
+
+```bash
+src/
+├── components/
+│   ├── Atomos/           # Componentes UI básicos (Button, Input)
+│   ├── Moleculas/        # Combinaciones de átomos (SearchBar, FormField)
+│   ├── Particulas/       # Componentes complejos reutilizables (DataTable, CriterioBusqueda)
+│   ├── Organismos/       # Secciones completas (Sidebar, UserProfile)
+│   └── Templates/        # Layouts estructurales (DashboardLayout)
+├── pages/                # Puntos de entrada de rutas
+└── servicios/            # Lógica de negocio y APIs
+
+📜 Reglas por Nivel
+1. Átomos
+Responsabilidad: UI básica e interacciones simples.
+
+Ejemplo:
+// components/Atomos/Button.jsx
+const Button = ({ onClick, children }) => (
+  <button onClick={onClick} className="btn">
+    {children}
+  </button>
+);
+
+2. Moléculas
+Responsabilidad: Combinar átomos + estado local.
+
+Ejemplo:
+// components/Moleculas/SearchBar.jsx
+const SearchBar = ({ onSearch }) => {
+  const [query, setQuery] = useState("");
+  return (
+    <div>
+      <Input value={query} onChange={setQuery} />
+      <Button onClick={() => onSearch(query)}>Buscar</Button>
+    </div>
+  );
+};
+
+3. Partículas (Nivel Extendido)
+Responsabilidad: Componentes complejos reutilizables.
+
+Ejemplo:
+// components/Particulas/CriterioBusqueda.jsx
+const CriterioBusqueda = ({ onFilter }) => (
+  <div>
+    <SearchBar onSearch={(q) => onFilter({ query: q })} />
+    <FiltrosAvanzados />
+  </div>
+);
+
+4. Organismos
+Responsabilidad: Integrar partículas + conexión a datos.
+
+Ejemplo:
+// components/Organismos/FiltrosAvanzados.jsx
+const FiltrosAvanzados = () => {
+  const { data } = useApi("/filters");
+  return <CriterioBusqueda filtros={data} />;
+};
+
+5. Templates
+Responsabilidad: Definir layouts estructurales.
+
+Ejemplo:
+// components/Templates/DashboardLayout.jsx
+const DashboardLayout = ({ sidebar, content }) => (
+  <div className="grid">
+    <aside>{sidebar}</aside>
+    <main>{content}</main>
+  </div>
+);
+
+🛠️ Convenciones
+Props Naming:
+
+Eventos: on{Acción} (onSearch, onFilter)
+
+Booleanos: is{Estado} (isLoading, isVisible)
+
+Estructura de Archivos:
+Moleculas/
+├── Formularios/
+│   └── FormLogin.jsx
+└── Tarjetas/
+    └── CardProfile.jsx
+
+Comunicación:
+
+Padre → Hijo: Props
+
+Hijo → Padre: Callbacks
+
+🚀 Ejemplo de Uso
+// pages/HomePage.jsx
+import DashboardLayout from "../components/Templates/DashboardLayout";
+import FiltrosAvanzados from "../components/Organismos/FiltrosAvanzados";
+
+const HomePage = () => (
+  <DashboardLayout
+    sidebar={<UserProfile />}
+    content={<FiltrosAvanzados />}
+  />
+);
+
+📌 Best Practices
+Testing:
+
+Átomos: Snapshot tests
+
+Moléculas/Partículas: Interacción con Testing Library
+
+Organismos: Mock de APIs
+
+Storybook:
+stories/
+  ├── Atomos/
+  ├── Moleculas/
+  └── Particulas/
