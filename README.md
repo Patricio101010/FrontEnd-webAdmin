@@ -10,9 +10,7 @@ Aplicación web para la gestión de finanzas personales e inversiones, construid
 - Vite
 - TailwindCSS (Atomic Design)
 
-**Backend:**
-- Python (FastAPI o Flask)
-- Zod para validación
+
 
 **Otras tecnologías:**
 - Zustand (Estado global)
