@@ -5,18 +5,22 @@ Aplicación web para la gestión de finanzas personales e inversiones, construid
 
 ## 🚀 Tecnologías
 
-**Frontend:**
+🖥️ Interfaz
 - React 19 + TypeScript
-- Vite
-- TailwindCSS (Atomic Design)
-
-
-
-**Otras tecnologías:**
-- Zustand (Estado global)
-- React Hook Form + Zod (Formularios)
-- React Router DOM v7 (Enrutamiento)
-- Vitest + React Testing Library (Testing)
+- Next.js 15 (App Router)
+- TailwindCSS 4 (Diseño atómico con tailwind-merge)
+- Lucide React (Iconografía moderna)
+  
+⚙️ Estado y lógica
+- Zustand 5 (Gestión de estado global)
+- React Hook Form 7 + Zod 4 (Validación de formularios)
+- TanStack React Query 5 (Manejo de datos asíncronos y caché)
+  
+🧪 Calidad y desarrollo
+- ESLint 9 + eslint-config-next
+- TypeScript 5.8
+- PostCSS 8 + Tailwind CLI
+- Vitest (si aún lo usas para pruebas unitarias)
 
 ---
 
@@ -32,14 +36,14 @@ src/
 │   ├── particles/           # Elementos dinámicos/abstractos (ej. Skeleton)
 │   ├── organisms/           # Componentes con lógica y estado (ej. Navbar)
 │   └── templates/           # Layouts reutilizables (ej. Dashboard, Auth)
-├── pages/                   # Vistas y rutas (Home, Login, Transactions)
+├── app/                   # Vistas y rutas (Home, Login, Transactions)
 ├── store/                   # Zustand para estado global
 ├── hooks/                   # Hooks personalizados (useAuth, useFetch)
 ├── utils/                   # Funciones auxiliares (formatos, fechas)
 ├── types/                   # Tipos TypeScript
 ├── api/                     # Cliente HTTP con axios y endpoints
-├── App.tsx                  # Configuración de rutas
-└── main.tsx                 # Entrada principal de la app
+└── fonts/                   # Configuración de next/font (Geist)
+
 ```
 
 ## Comenzando
@@ -69,3 +73,7 @@ Documentación de Next.js - aprende sobre las características y la API de Next.
 Aprende Next.js - un tutorial interactivo de Next.js.
 
 También puedes revisar el repositorio de Next.js en GitHub – ¡tu feedback y contribuciones son bienvenidos!
+
+- [Documentación oficial de Next.js](https://nextjs.org/docs)
+- [Aprende Next.js (tutorial interactivo)](https://nextjs.org/learn)
+- [Repositorio en GitHub](https://github.com/vercel/next.js)
