@@ -1,4 +1,5 @@
 # Finanza-web-app
+
 Aplicación web para la gestión de finanzas personales e inversiones, construida con tecnologías modernas para ofrecer una experiencia fluida y escalable.
 
 ---
@@ -6,17 +7,20 @@ Aplicación web para la gestión de finanzas personales e inversiones, construid
 ## 🚀 Tecnologías
 
 🖥️ Interfaz
+
 - React 19 + TypeScript
 - Next.js 15 (App Router)
 - TailwindCSS 4 (Diseño atómico con tailwind-merge)
 - Lucide React (Iconografía moderna)
-  
+
 ⚙️ Estado y lógica
+
 - Zustand 5 (Gestión de estado global)
 - React Hook Form 7 + Zod 4 (Validación de formularios)
 - TanStack React Query 5 (Manejo de datos asíncronos y caché)
-  
+
 🧪 Calidad y desarrollo
+
 - ESLint 9 + eslint-config-next
 - TypeScript 5.8
 - PostCSS 8 + Tailwind CLI
@@ -36,7 +40,7 @@ src/
 │   ├── particles/           # Elementos dinámicos/abstractos (ej. Skeleton)
 │   ├── organisms/           # Componentes con lógica y estado (ej. Navbar)
 │   └── templates/           # Layouts reutilizables (ej. Dashboard, Auth)
-├── app/                   # Vistas y rutas (Home, Login, Transactions)
+├── app/                     # Vistas y rutas (Home, Login, Transactions)
 ├── store/                   # Zustand para estado global
 ├── hooks/                   # Hooks personalizados (useAuth, useFetch)
 ├── utils/                   # Funciones auxiliares (formatos, fechas)
@@ -77,3 +81,7 @@ También puedes revisar el repositorio de Next.js en GitHub – ¡tu feedback y 
 - [Documentación oficial de Next.js](https://nextjs.org/docs)
 - [Aprende Next.js (tutorial interactivo)](https://nextjs.org/learn)
 - [Repositorio en GitHub](https://github.com/vercel/next.js)
+
+verificar problema
+npx eslint src --ext .ts,.tsx --fix
+npx tsc --noEmit

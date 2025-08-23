@@ -1,0 +1,92 @@
+{
+  "root": true,
+  "ignorePatterns": [".next/", "node_modules/"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "no-unused-vars": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/components/atoms/**/*.ts",
+        "src/components/atoms/**/*.tsx"
+      ],
+      "rules": {
+        "max-lines-per-function": ["error", 40],
+        "complexity": ["warn", 3]
+      }
+    },
+    {
+      "files": [
+        "src/components/molecules/**/*.ts",
+        "src/components/molecules/**/*.tsx"
+      ],
+      "rules": {
+        "max-lines-per-function": ["error", 80],
+        "complexity": ["warn", 5]
+      }
+    },
+    {
+      "files": [
+        "src/components/organisms/**/*.ts",
+        "src/components/organisms/**/*.tsx"
+      ],
+      "rules": {
+        "max-lines-per-function": ["error", 150],
+        "complexity": ["warn", 10]
+      }
+    },
+    {
+      "files": [
+        "src/components/templates/**/*.ts",
+        "src/components/templates/**/*.tsx"
+      ],
+      "rules": {
+        "max-lines-per-function": ["error", 200],
+        "complexity": ["warn", 12]
+      }
+    },
+    {
+      "files": ["src/app/**/*.ts", "src/app/**/*.tsx"],
+      "rules": {
+        "max-lines-per-function": "off",
+        "complexity": "off"
+      }
+    }
+  ]
+}
