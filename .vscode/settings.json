@@ -42,5 +42,21 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
-  }
+  },
+
+  // ===== Ocultar carpetas innecesarias =====
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.vscode": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/*.log": true,
+    "**/coverage": true,
+    "**/public": true
+  },
+
+  // Configuración adicional para explorer
+  "explorer.excludeGitIgnore": true
 }

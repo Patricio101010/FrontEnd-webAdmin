@@ -4,10 +4,7 @@ import React from 'react';
 import { Button } from '../../Atomos/Button';
 import { cn } from '@/lib/utils';
 
-export type ActionKey =
-  | 'procesar'
-  | 'aprobar'
-  | 'guardar'
+export type ActionKey = | 'procesar' | 'aprobar' | 'guardar'
   | 'buscar'
   | 'nuevo'
   | 'modificar'
@@ -26,19 +23,19 @@ type ButtonConfig = {
 };
 
 const buttonConfigs: Record<ActionKey, ButtonConfig> = {
-  procesar: { label: 'Procesar',   className: 'btn-primary' },
-  aprobar:   { label: 'Aprobar',    className: 'btn-primary' },
-  guardar:   { label: 'Guardar',    className: 'btn-primary' },
-  buscar:    { label: 'Buscar',     className: 'btn-ok'      },
-  nuevo:     { label: 'Nuevo',      className: 'btn-prime'   },
-  modificar: { label: 'Modificar',  className: 'btn-prime'   },
-  masivo:    { label: 'Ingreso Masivo', className: 'btn-primary' },
-  informe:   { label: 'Informe',    className: 'btn-primary' },
-  imprimir:  { label: 'Impr. Neg',  className: 'btn-primary' },
-  volver:    { label: 'Volver',     className: 'btn-primary' },
-  ejecutar:  { label: 'Ejecutar',   className: 'btn-primary' },
-  envio:     { label: 'Envío a Ope.', className: 'btn-primary' },
-  limpiar:   { label: 'Limpiar',    className: 'btn-mora'    },
+  procesar: { label: 'Procesar', className: 'btn-primary' },
+  aprobar: { label: 'Aprobar', className: 'btn-primary' },
+  guardar: { label: 'Guardar', className: 'btn-primary' },
+  buscar: { label: 'Buscar', className: 'btn-ok' },
+  nuevo: { label: 'Nuevo', className: 'btn-prime' },
+  modificar: { label: 'Modificar', className: 'btn-prime' },
+  masivo: { label: 'Ingreso Masivo', className: 'btn-primary' },
+  informe: { label: 'Informe', className: 'btn-primary' },
+  imprimir: { label: 'Impr. Neg', className: 'btn-primary' },
+  volver: { label: 'Volver', className: 'btn-primary' },
+  ejecutar: { label: 'Ejecutar', className: 'btn-primary' },
+  envio: { label: 'Envío a Ope.', className: 'btn-primary' },
+  limpiar: { label: 'Limpiar', className: 'btn-mora' },
 };
 
 export type ActionButtonsProps = {
@@ -54,19 +51,15 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({
 }) => (
   <>
     {buttonsToShow.map((key) => {
-      const cfg = buttonConfigs[key];
-      if (!cfg) return null;
-      const handleClick = onAction[key] ?? (() => {});
+      const configuracion = buttonConfigs[key];
+      if (!configuracion) return null;
+      
+      const handleClick = onAction[key] ?? (() => { });
       const isDisabled = disabled[key] ?? false;
 
       return (
-        <Button
-          key={key}
-          onClick={handleClick}
-          className={cn(cfg.className, 'me-1')}
-          disabled={isDisabled}
-        >
-          {cfg.label}
+        <Button key={key} onClick={handleClick} className={cn(configuracion.className, 'me-1')} disabled={isDisabled}>
+          {configuracion.label}
         </Button>
       );
     })}

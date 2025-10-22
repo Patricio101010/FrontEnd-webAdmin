@@ -1,30 +1,16 @@
-// src/components/molecules/input/NumericInput.tsx
+import { cn } from "@/lib/utils";
 import { useFormContext } from "react-hook-form";
+import { NumericInputProps } from "../../../types/Numeros/NumericInputProps";
 import { Input } from "../../Atomos/Input";
 import { Label } from "../../Atomos/label";
-import { cn } from "@/lib/utils";
-
-type NumericInputProps = {
-  name: string;
-  label: string;
-  placeholder?: string;
-  step?: number;
-  min?: number;
-  max?: number;
-};
 
 export const NumericInput = ({
   name,
   label,
   placeholder,
-  step = 1,
-  min,
-  max,
+  step = 1
 }: NumericInputProps) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const { register, formState: { errors } } = useFormContext();
   const error = errors[name]?.message as string | undefined;
 
   return (
@@ -34,8 +20,6 @@ export const NumericInput = ({
         id={name}
         type="number"
         step={step}
-        min={min}
-        max={max}
         placeholder={placeholder}
         {...register(name, { valueAsNumber: true })}
         className={cn(error && "border-red-500")}
